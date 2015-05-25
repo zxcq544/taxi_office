@@ -1,0 +1,9 @@
+name = Taxi office
+description = Taxi office fo taxi
+core = 7.x
+package = Taxi office
+
+dependencies[]= entity
+
+
+
