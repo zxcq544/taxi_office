@@ -1,5 +1,7 @@
 <?php
 
+require_once '_functions.php';
+
 
 function taxi_office_schema() {
 	$schema = array();
