@@ -9,3 +9,6 @@ files[] = classes/order/OrderEntity.inc
 files[] = classes/order/OrderEntityController.inc
 files[] = classes/order/OrderUIController.inc
 
+files[] = classes/car/CarEntity.inc
+files[] = classes/car/CarEntityController.inc
+files[] = classes/car/CarUIController.inc
