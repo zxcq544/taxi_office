@@ -79,3 +79,7 @@ function car_access($op) {
 			break;
 	}
 }
+
+function taxi_office_call_access($op){
+	return TRUE;
+}

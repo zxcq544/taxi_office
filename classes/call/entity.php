@@ -1,7 +1,7 @@
 <?php
 
 function __call_entity(&$entity) {
-	$entity['order'] = array(
+	$entity['call'] = array(
 			'label'            => t('Call'),
 			'plural label'     => t('Calls'),
 			'description'      => t('Incoming calls'),

@@ -13,5 +13,5 @@ files[] = classes/car/CarEntity.inc
 files[] = classes/car/CarEntityController.inc
 files[] = classes/car/CarUIController.inc
 
-files[] = classes/Call/CallEntity.inc
-files[] = classes/Call/CallEntityController.inc
+files[] = classes/call/CallEntity.inc
+files[] = classes/call/CallEntityController.inc
