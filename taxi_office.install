@@ -5,8 +5,37 @@ require_once '_functions.php';
 
 function taxi_office_schema() {
 	$schema = array();
-	_taxi_office_include_settings('schema',$schema);
-	watchdog('taxi',print_r($schema,true));
+	$schema['taxi_office_cab'] = array(
+			'description' => 'The base table of taxi_office',
+			'fields'      => array(
+					'pid'      => array(
+							'description' => 'driver reference',
+							'type'        => 'int',
+							'not null'    => TRUE,
+							'unsigned'    => TRUE,
+					),
+					'cid'      => array(
+							'description' => 'car reference',
+							'type'        => 'int',
+							'not null'    => TRUE,
+							'unsigned'    => TRUE,
+					),
+					'status'   => array(
+							'type'     => 'varchar',
+							'length'   => 100,
+							'not null' => TRUE
+					),
+					'position' => array(
+							'type'     => 'varchar',
+							'length'   => 255,
+							'not null' => TRUE
+					),
+			),
+			'primary key' => array('pid'),
+	);
+	_taxi_office_include_settings('schema', $schema);
+	watchdog('taxi', print_r($schema, TRUE));
+
 
 	return $schema;
 }

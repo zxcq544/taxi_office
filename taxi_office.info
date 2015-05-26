@@ -15,3 +15,6 @@ files[] = classes/car/CarUIController.inc
 
 files[] = classes/call/CallEntity.inc
 files[] = classes/call/CallEntityController.inc
+
+files[] = classes/person/PersonEntity.inc
+files[] = classes/person/PersonEntityController.inc

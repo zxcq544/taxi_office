@@ -83,3 +83,6 @@ function car_access($op) {
 function taxi_office_call_access($op){
 	return TRUE;
 }
+function person_access($op){
+	return TRUE;
+}
