@@ -21,10 +21,28 @@ function taxi_office_permission() {
 			'title'       => 'Редактирование заказа',
 			'description' => 'Право на редактирование заказ'
 	);
-	$permission[OrderEntityController::ORDER_PERM_DELETE]= array(
-			'title'       =>'Удаление заказа',
-			'description' =>'Право на удаление заказа'
+	$permission[OrderEntityController::ORDER_PERM_DELETE] = array(
+			'title'       => 'Удаление заказа',
+			'description' => 'Право на удаление заказа'
 	);
+	$permission[CarEntityController::CAR_PERM_CREATE] = array(
+			'title'       => 'Создание машины',
+			'description' => 'Создание машины'
+	);
+
+	$permission[CarEntityController::CAR_PERM_EDIT] = array(
+			'title'       => 'Редактирование машины',
+			'description' => 'Редактирование машины'
+	);
+	$permission[CarEntityController::CAR_PERM_DELETE] = array(
+			'title'       => 'Удаление машины',
+			'description' => 'Удаление машины'
+	);
+	$permission[CarEntityController::CAR_PERM_VIEW] = array(
+			'title'       => 'Просмотр машины',
+			'description' => 'Просмотр машины'
+	);
+
 	return $permission;
 }
 
@@ -41,6 +59,23 @@ function order_access($op) {
 			break;
 		case 'delete':
 			return user_access(OrderEntityController::ORDER_PERM_DELETE);
+			break;
+	}
+}
+
+function car_access($op) {
+	switch ($op) {
+		case 'view':
+			return user_access(CarEntityController::CAR_PERM_VIEW);
+			break;
+		case 'edit':
+			return user_access(CarEntityController::CAR_PERM_EDIT);
+			break;
+		case 'create':
+			return user_access(CarEntityController::CAR_PERM_CREATE);
+			break;
+		case 'delete':
+			return user_access(CarEntityController::CAR_PERM_DELETE);
 			break;
 	}
 }

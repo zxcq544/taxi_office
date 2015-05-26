@@ -1,5 +1,5 @@
 <?php
-
+//TODO FieldAPI - arrival_address, destination_address
 $schema['taxi_office_orders'] = array(
 		'description' => 'The base table of taxi_office_orders',
 		'fields'      => array(
@@ -124,3 +124,4 @@ $schema['taxi_office_orders'] = array(
 		'primary key' => array('oid'),
 		//			'unique keys'=>array(),
 );
+?>

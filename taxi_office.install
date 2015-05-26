@@ -5,7 +5,8 @@ require_once '_functions.php';
 
 function taxi_office_schema() {
 	$schema = array();
-	_taxi_office_include_settings('schema');
+	_taxi_office_include_settings('schema',$schema);
+	watchdog('taxi',print_r($schema,true));
 
 	return $schema;
 }

@@ -3,20 +3,20 @@
 function taxi_office_entity_info() {
 	$entity = array();
 	$entity['order'] = array(
-			'label'            => 'Order',
-			'plural label'     => 'Orders',
+			'label'            => 'Заказ',
+			'plural label'     => 'Заказы',
 			'label callback'   => 'entity_class_label',
 			'uri callback'     => 'entity_class_label',
 			'access callback'  => 'order_access',
-			//			'bundles key'      => array('bundle' => 'bundle'),
+			'bundles key'      => array(),
 			'entity keys'      => array(
-					'id'    => 'oid',
-//					'label' => 'oid'
+					'id' => 'oid',
+					//					'label' => 'oid'
 			),
 			'bundles'          => array(
 					'order' => array(
-							'label'        => 'Order',
-							'plural label' => 'Order',
+							'label'        => 'Заказ',
+							'plural label' => 'Заказы',
 							'description'  => '',
 							'admin'        => array(
 									'path' => 'admin/orders'
@@ -52,7 +52,7 @@ function taxi_office_entity_info() {
 			'label callback'   => 'entity_class_label',
 			'uri callback'     => 'entity_class_uri',
 			'access callback'  => 'car_access',
-			'bundles key'      => array('bundle' => 'bundle'),
+			'bundles key'      => array(),
 			'entity keys'      => array(
 					'id' => 'cid',
 			),
@@ -68,29 +68,27 @@ function taxi_office_entity_info() {
 			),
 			'description'      => '',
 			'entity class'     => 'CarEntity',
-			'controller class' => 'CarEntitiController',
+			'controller class' => 'CarEntityController',
 			'fieldable'        => TRUE,
-
 			'admin ui'         => array(
-					'menu wildcard' => '%car',
-					'path'          => 'admin/cars',
-					'controller class'=>'CarUIController'
+					'menu wildcard'    => '%car',
+					'path'             => 'admin/cars',
+					'controller class' => 'CarUIController'
 			),
-			'base table'=>'taxi_office_cars',
+			'base table'       => 'taxi_office_cars',
 			'view modes'       => array(
-			'full'   => array(
-					'label'           => t('Full'),
-					'custom settings' => TRUE,
+					'full'   => array(
+							'label'           => t('Full'),
+							'custom settings' => TRUE,
+					),
+					'teaser' => array(
+							'label'           => t('Teaser'),
+							'custom settings' => TRUE,
+					),
 			),
-			'teaser' => array(
-					'label'           => t('Teaser'),
-					'custom settings' => TRUE,
-			),
-	),
-			'module'=>'taxi_office',
+			'module'           => 'taxi_office',
 	);
-	
 
-	
+
 	return $entity;
 }
