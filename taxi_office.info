@@ -5,5 +5,7 @@ package = Taxi office
 
 dependencies[]= entity
 
-
+files[] = classes/order/OrderEntity.inc
+files[] = classes/order/OrderEntityController.inc
+files[] = classes/order/OrderUIController.inc
 

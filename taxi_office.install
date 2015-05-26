@@ -1,7 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eduard
- * Date: 25.05.15
- * Time: 18:35
- */
+
+
+function taxi_office_schema() {
+	$schema = array();
+	$schema['taxi_office_orders'] = array(
+			'description' => 'The base table of taxi_office_orders',
+			'fields'      => array(
+					'oid' => array(
+							'description' => 'Primary key',
+							'type'        => 'serial',
+							'not null'    => TRUE,
+							'unsigned'    => TRUE,
+					),
+
+			),
+			'primary key' => array('oid'),
+			//			'unique keys'=>array(),
+	);
+	return $schema;
+}

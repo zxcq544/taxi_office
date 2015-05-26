@@ -3,6 +3,44 @@
 require_once('taxi_office.entity.inc');
 
 
+/**
+ * Implements hook_permission().
+ */
+function taxi_office_permission() {
+	$permission = array();
 
+	$permission[OrderEntityController::ORDER_PERM_CREATE] = array(
+			'title'       => 'Создание заказа',
+			'description' => 'Право на создание массива'
+	);
+	$permission[OrderEntityController::ORDER_PERM_VIEW] = array(
+			'title'       => 'Просмотр заказа',
+			'description' => 'Право на просмотр заказа'
+	);
+	$permission[OrderEntityController::ORDER_PERM_EDIT] = array(
+			'title'       => 'Редактирование заказа',
+			'description' => 'Право на редактирование заказ'
+	);
+	$permission[OrderEntityController::ORDER_PERM_DELETE]= array(
+			'title'       =>'Удаление заказа',
+			'description' =>'Право на удаление заказа'
+	);
+	return $permission;
+}
 
-
+function order_access($op) {
+	switch ($op) {
+		case 'view':
+			return user_access(OrderEntityController::ORDER_PERM_VIEW);
+			break;
+		case 'edit':
+			return user_access(OrderEntityController::ORDER_PERM_EDIT);
+			break;
+		case 'create':
+			return user_access(OrderEntityController::ORDER_PERM_CREATE);
+			break;
+		case 'delete':
+			return user_access(OrderEntityController::ORDER_PERM_DELETE);
+			break;
+	}
+}
