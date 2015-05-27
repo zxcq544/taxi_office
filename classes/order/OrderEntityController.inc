@@ -7,6 +7,14 @@
  * Time: 10:45
  */
 class OrderEntityController extends EntityAPIController {
+	public function create(array $values = array()) {
+		$values = array(
+				'created'     => time(),
+				'update_date' => time()
+		);
+		return parent::create($values);
+	}
+
 
 	const ORDER_PERM_CREATE = "create order";
 	const ORDER_PERM_VIEW   = "view order";

@@ -36,10 +36,10 @@ function __order_schema(&$schema) {
 							'unsigned'    => TRUE,
 					),
 					'order_client_id'  => array(
-							'description' => '',
+							'description' => 'Reference client id',
 							'type'        => 'int',
 							//					   'length'=>,
-							'not null'    => TRUE,
+							'not null'    => FALSE,
 							'unsigned'    => TRUE,
 							//					   'default'=>
 					),
@@ -64,9 +64,9 @@ function __order_schema(&$schema) {
 					),
 					'status'           => array(
 							'description' => 'Reference order status ',
-							'type'        => 'int',
+							'type'        => 'varchar',
+							'length'      => 100,
 							'not null'    => TRUE,
-							'unsigned'    => TRUE,
 					),
 					'charge'           => array(
 							'description' => 'Charge',
