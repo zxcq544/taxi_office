@@ -14,6 +14,7 @@ dependencies[] = file
 dependencies[] = image
 dependencies[] = entity
 dependencies[] = addressfield
+dependencies[] = nodejs
 
 files[] = classes/order/OrderEntity.inc
 files[] = classes/order/OrderEntityController.inc
