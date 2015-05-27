@@ -1,11 +1,11 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: eduard
  * Date: 26.05.15
  * Time: 16:07
  */
+
 class PersonEntity extends Entity {
 	protected function defaultLabel() {
 		return !empty($this->name)?$this->name:"ЧЕЛОВЕК";
@@ -14,10 +14,11 @@ class PersonEntity extends Entity {
 	protected function defaultUri() {
 		return array('path' => "persons/" . $this->identifier());
 	}
-
-}
-
-function person_form($form,&$form_state){
-
-	return $form;
+	public function getFullName() {
+		$name = '';
+		$name .= empty($this->second_name) ? '' : ($this->second_name . ' ');
+		$name .= empty($this->name) ? '' : ($this->name . ' ');
+		$name .= empty($this->surname) ? '' : ($this->surname . ' ');
+		return $name;
+	}
 }

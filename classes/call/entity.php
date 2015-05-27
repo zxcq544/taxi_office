@@ -2,9 +2,9 @@
 
 function __call_entity(&$entity) {
 	$entity['call'] = array(
-			'label'            => t('Call'),
-			'plural label'     => t('Calls'),
-			'description'      => t('Incoming calls'),
+			'label'            => 'Звонок',
+			'plural label'     => 'Звонки',
+			'description'      => 'ВХодящие звонки',
 			'label callback'   => 'entity_class_label',
 			'uri callback'     => 'entity_class_uri',
 			'access callback'  => 'taxi_office_call_access',
@@ -16,7 +16,7 @@ function __call_entity(&$entity) {
 			'fieldable'        => FALSE,
 			'admin ui'         => array(
 					'path'             => 'admin/calls',
-					'controller class' => 'EntityDefaultUIController'
+					'controller class' => 'CallUIController'
 			),
 			'base table'       => 'taxi_office_calls',
 			'view modes'       => array(),
