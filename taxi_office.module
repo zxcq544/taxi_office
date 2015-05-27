@@ -43,6 +43,17 @@ function taxi_office_permission() {
 			'description' => 'Просмотр машины'
 	);
 
+	$permission[CallEntityController::CALL_VIEW] = array(
+			'title' => 'Просмотр всех входящих звонков',
+	);
+
+	$permission[CallEntityController::CALL_EDIT] = array(
+			'title' => 'Редактирование входящих звонков',
+	);
+
+	$permission[CallEntityController::CALL_DELETE] = array(
+			'title' => 'Удаление звонков',
+	);
 	return $permission;
 }
 
@@ -80,9 +91,6 @@ function car_access($op) {
 	}
 }
 
-function taxi_office_call_access($op){
-	return TRUE;
-}
-function person_access($op){
+function person_access($op) {
 	return TRUE;
 }

@@ -18,3 +18,4 @@ files[] = classes/call/CallEntityController.inc
 
 files[] = classes/person/PersonEntity.inc
 files[] = classes/person/PersonEntityController.inc
+files[] = classes/person/PersonUIController.inc
