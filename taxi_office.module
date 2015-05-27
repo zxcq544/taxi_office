@@ -47,13 +47,6 @@ function taxi_office_permission() {
 			'title' => 'Просмотр всех входящих звонков',
 	);
 
-	$permission[CallEntityController::CALL_EDIT] = array(
-			'title' => 'Редактирование входящих звонков',
-	);
-
-	$permission[CallEntityController::CALL_DELETE] = array(
-			'title' => 'Удаление звонков',
-	);
 	return $permission;
 }
 

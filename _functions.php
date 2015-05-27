@@ -5,7 +5,7 @@ function _taxi_office_includes($file_name = NULL, &$schema) {
 	$path_to_module = drupal_get_path('module', 'taxi_office') . '/classes';
 	$subdirs = array_filter(glob($path_to_module . '/*', GLOB_ONLYDIR), 'is_dir');
 	foreach ($subdirs as $dirname) {
-		module_load_include('php', 'taxi_office', $file_name);
+		module_load_include('php', 'taxi_office', 'classes/' . basename($dirname) . '/' . $file_name);
 		$function_name = '__' . basename($dirname) . '_' . $file_name;
 		if (function_exists($function_name))
 			$function_name($schema);
