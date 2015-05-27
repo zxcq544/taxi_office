@@ -3,6 +3,15 @@ description = Taxi office fo taxi
 core = 7.x
 package = Taxi office
 
+dependencies[]= field
+dependencies[]= list
+dependencies[]= text
+dependencies[]= number
+dependencies[]= options
+dependencies[]= taxonomy
+dependencies[]= text
+dependencies[]= file
+dependencies[]= image
 dependencies[]= entity
 dependencies[]= addressfield
 
