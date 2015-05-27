@@ -6,7 +6,7 @@ function __order_entity(&$entity) {
 			'label'            => 'Заказ',
 			'plural label'     => 'Заказы',
 			'label callback'   => 'entity_class_label',
-			'uri callback'     => 'entity_class_label',
+			'uri callback'     => 'entity_class_uri',
 			'access callback'  => 'order_access',
 			'bundles key'      => array(),
 			'entity keys'      => array(
@@ -29,7 +29,7 @@ function __order_entity(&$entity) {
 			'fieldable'        => TRUE,
 
 			'admin ui'         => array(
-					'path'             => 'admin/order',
+					'path'             => 'admin/orders',
 					'controller class' => 'OrderUIController'
 			),
 			'base table'       => 'taxi_office_orders',

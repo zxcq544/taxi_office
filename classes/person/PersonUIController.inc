@@ -7,5 +7,12 @@
  */
 
 class PersonUIController extends EntityDefaultUIController {
+	function hook_menu(){
+		$items = parent::hook_menu();
 
+		$items[$this->path.'/add']['page callback'] = 'entity_ui_bundle_add_page';
+		$items[$this->path.'/add']['page arguments'] = array($this->entityType);
+	return $items;
+
+	}
 }

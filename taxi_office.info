@@ -4,6 +4,7 @@ core = 7.x
 package = Taxi office
 
 dependencies[]= entity
+dependencies[]= addressfield
 
 files[] = classes/order/OrderEntity.inc
 files[] = classes/order/OrderEntityController.inc
@@ -18,3 +19,4 @@ files[] = classes/call/CallEntityController.inc
 
 files[] = classes/person/PersonEntity.inc
 files[] = classes/person/PersonEntityController.inc
+files[] = classes/person/PersonUIController.inc

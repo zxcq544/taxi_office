@@ -14,7 +14,7 @@ function __person_entity(&$entity) {
 			'uri callback'     => 'entity_class_uri',
 			'access callback'  => 'person_access',
 			'entity keys'      => array(
-					'id'     => 'pid',
+					'id'     => 'uid',
 					'bundle' => 'type',
 			),
 			'bundles key'      => array('bundle' => 'type'),
@@ -42,7 +42,7 @@ function __person_entity(&$entity) {
 
 			'admin ui' => array(
 					'menu wildcard'    => '%',
-					'path'             => 'admin/',
+					'path'             => 'admin/persons',
 					'controller class' => 'PersonUIController'
 			),
 			'base table'       => 'taxi_office_persons',

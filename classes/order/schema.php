@@ -57,6 +57,11 @@ function __order_schema(&$schema) {
 							'not null'    => TRUE,
 							'unsigned'    => TRUE,
 					),
+					'phone'            => array(
+							'type'     => 'varchar',
+							'length'   => 50,
+							'not null' => FALSE,
+					),
 					'status'           => array(
 							'description' => 'Reference order status ',
 							'type'        => 'int',
