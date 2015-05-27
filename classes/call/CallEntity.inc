@@ -2,6 +2,9 @@
 
 
 class CallEntity extends Entity {
+
+	const CALL_STATUS_NONE = 0;
+
 	protected function defaultLabel() {
 		return "#" . $this->identifier();
 	}
@@ -10,7 +13,21 @@ class CallEntity extends Entity {
 		return array('path' => 'calls/' . $this->identifier());
 	}
 
+	public function getStatuses() {
+		return array(
+				$this::CALL_STATUS_NONE => 'Без статуса',
+		);
+	}
 
+	/**
+	 * @param int $status
+	 *
+	 * @return string|null
+	 */
+	public function getStatusLabel($status) {
+		$statuses = $this::getStatuses();
+		return isset($statuses[$status]) ? $statuses[$status] : 'Не верный статус';
+	}
 }
 
 /**
