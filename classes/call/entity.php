@@ -16,7 +16,7 @@ function __call_entity(&$entity) {
 			'fieldable'        => FALSE,
 			'admin ui'         => array(
 					'path'             => 'admin/calls',
-					'controller class' => 'EntityDefaultUIController'
+					'controller class' => 'CallUIController'
 			),
 			'base table'       => 'taxi_office_calls',
 			'view modes'       => array(),

@@ -17,12 +17,13 @@ function __call_schema(&$schema) {
 							'type'     => 'int',
 							'not null' => FALSE,
 							'unsigned' => TRUE,
+							'default'  => NULL,
 					),
 					'operator'  => array(
 							'type'     => 'int',
-							'not null' => TRUE,
+							'not null' => NULL,
 							'unsigned' => TRUE,
-							'default'  => 0,
+							'default'  => NULL,
 					),
 					'status'    => array(
 							'type'     => 'int',

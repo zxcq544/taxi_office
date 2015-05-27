@@ -59,8 +59,8 @@ class CallEntityController extends EntityAPIController {
 		$content['status'] = array(
 														 '#title'      => 'Статус',
 														 '#field_name' => 'status',
-														 '#items'      => array(array('value' => $this->status)),
-														 0             => array('#markup' => check_plain($entity->getStatusLabel($this->status)))
+														 '#items'      => array(array('value' => $entity->status)),
+														 0             => array('#markup' => check_plain($entity->getStatusLabel($entity->status)))
 												 ) + _taxi_office_view_field_defaults($entity, 'inline');
 
 
