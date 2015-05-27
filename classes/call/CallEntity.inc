@@ -1,19 +1,26 @@
 <?php
 
 
-class CallEntity extends Entity{
+class CallEntity extends Entity {
 	protected function defaultLabel() {
-		return "#".$this->identifier();
+		return "#" . $this->identifier();
 	}
 
 	protected function defaultUri() {
-		return array('path'=>'calls/'.$this->identifier());
+		return array('path' => 'calls/' . $this->identifier());
 	}
 
 
 }
 
-function call_form($form,&$form_state){
+/**
+ * @param            $form
+ * @param            $form_state
+ * @param CallEntity $call
+ *
+ * @return mixed
+ */
+function call_form($form, &$form_state, $call = NULL) {
 
 	return $form;
 }

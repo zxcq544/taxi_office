@@ -8,9 +8,14 @@ function __call_schema(&$schema) {
 							'not null' => TRUE,
 							'unsigned' => TRUE,
 					),
-					'hang_time' => array(
+					'created'   => array(
 							'type'     => 'int',
 							'not null' => TRUE,
+							'unsigned' => TRUE,
+					),
+					'hang_time' => array(
+							'type'     => 'int',
+							'not null' => FALSE,
 							'unsigned' => TRUE,
 					),
 					'operator'  => array(
@@ -19,7 +24,6 @@ function __call_schema(&$schema) {
 							'unsigned' => TRUE,
 							'default'  => 0,
 					),
-
 					'status'    => array(
 							'type'     => 'int',
 							'not null' => TRUE,
