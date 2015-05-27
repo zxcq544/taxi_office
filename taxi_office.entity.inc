@@ -19,6 +19,24 @@ function taxi_office_call_access($op = 'view', $call = NULL, $account = NULL) {
 	return FALSE;
 }
 
+function taxi_office_clien_access($op = 'view', $client = NULL, $account = NULL) {
+	if (empty($account)) {
+		global $user;
+		$account = $user;
+	}
+	switch ($op) {
+		case 'view':
+			return user_access(ClientEntityController::CLIENT_VIEW, $account);
+		case 'edit':
+		case 'update':
+		case 'create':
+			return user_access(ClientEntityController::CLIENT_EDIT, $account);
+		case 'delete':
+			return user_access(ClientEntityController::CLIENT_DELETE, $account);
+	}
+	return FALSE;
+}
+
 /**
  * @param int $uid Drupal user uid
  *

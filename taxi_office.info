@@ -3,17 +3,17 @@ description = Taxi office fo taxi
 core = 7.x
 package = Taxi office
 
-dependencies[]= field
-dependencies[]= list
-dependencies[]= text
-dependencies[]= number
-dependencies[]= options
-dependencies[]= taxonomy
-dependencies[]= text
-dependencies[]= file
-dependencies[]= image
-dependencies[]= entity
-dependencies[]= addressfield
+dependencies[] = field
+dependencies[] = list
+dependencies[] = text
+dependencies[] = number
+dependencies[] = options
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = file
+dependencies[] = image
+dependencies[] = entity
+dependencies[] = addressfield
 
 files[] = classes/order/OrderEntity.inc
 files[] = classes/order/OrderEntityController.inc
@@ -30,3 +30,7 @@ files[] = classes/call/CallUIController.inc
 files[] = classes/person/PersonEntity.inc
 files[] = classes/person/PersonEntityController.inc
 files[] = classes/person/PersonUIController.inc
+
+files[] = classes/client/ClientEntity.inc
+files[] = classes/client/ClientEntityController.inc
+files[] = classes/client/ClientUIController.inc
