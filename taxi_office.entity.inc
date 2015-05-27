@@ -29,12 +29,30 @@ function person_load($uid) {
 }
 
 /**
+ * @param array $uids
+ *
+ * @return array
+ */
+function person_load_multiple($uids = array()) {
+	return entity_load('person', $uids);
+}
+
+/**
  * @param int $id Call id
  *
  * @return CallEntity|null mixed
  */
 function call_load($id) {
 	return entity_load_single('call', $id);
+}
+
+/**
+ * @param $ids
+ *
+ * @return array
+ */
+function call_load_multiple($ids) {
+	return entity_load('call', $ids);
 }
 
 /**
@@ -47,6 +65,15 @@ function car_load($cid) {
 }
 
 /**
+ * @param $cids
+ *
+ * @return array
+ */
+function car_load_multiple($cids) {
+	return entity_load('car', $cids);
+}
+
+/**
  * @param int $id Order id
  *
  * @return OrderEntity|null mixed
@@ -54,4 +81,13 @@ function car_load($cid) {
  */
 function order_load($id) {
 	return entity_load_single('order', $id);
+}
+
+/**
+ * @param $ids
+ *
+ * @return array
+ */
+function order_load_multiple($ids) {
+	return entity_load('order', $ids);
 }
