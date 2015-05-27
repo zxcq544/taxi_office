@@ -103,7 +103,7 @@ function taxi_office_schema() {
 			),
 			'primary key' => array('pid'),
 	);
-	_taxi_office_include_settings('schema', $schema);
+	_taxi_office_includes('schema', $schema);
 
 
 	return $schema;
