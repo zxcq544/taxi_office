@@ -1,6 +1,7 @@
 <?php
 require_once '_functions.php';
 require_once('taxi_office.entity.inc');
+require_once 'taxi_office.pages.inc';
 
 
 /**
@@ -85,5 +86,34 @@ function car_access($op) {
 }
 
 function person_access($op) {
+	return TRUE;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function taxi_office_menu() {
+	$items = array();
+	$items['dispatcher'] = array(
+			'title'            => 'Рабочий стол диспечера',
+			'page callback'    => 'taxi_office_dispatcher_page',
+			'page arguments'   => array(),
+			'access callback'  => 'taxi_office_dispatcher_access',
+			'access arguments' => array(),
+			'type'             => MENU_CALLBACK,
+	);
+
+	$items['admin/config/system/taxi-office'] = array(
+			'title'            => 'Настройки TaxiOffice',
+			'page callback'    => 'drupal_get_form',
+			'page arguments'   => array('taxi_office_config_page'),
+			'access arguments' => array('access administration pages'),
+			'type'             => MENU_NORMAL_ITEM,
+	);
+
+	return $items;
+}
+
+function taxi_office_dispatcher_access() {
 	return TRUE;
 }

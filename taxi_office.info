@@ -16,6 +16,8 @@ dependencies[] = entity
 dependencies[] = addressfield
 dependencies[] = nodejs
 
+configure = admin/config/system/taxi-office
+
 files[] = classes/order/OrderEntity.inc
 files[] = classes/order/OrderEntityController.inc
 files[] = classes/order/OrderUIController.inc
