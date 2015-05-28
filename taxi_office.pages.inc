@@ -3,10 +3,13 @@
 function taxi_office_dispatcher_page() {
 	$nodeJsUrl = variable_get('taxi_office_nodejs_url', '');
 	if (!empty($nodeJsUrl)) {
-		$headers = @get_headers($nodeJsUrl);
-		if ($headers !== FALSE && (bool)preg_match('/200\s*OK/', $headers[0])) {
+		$scriptUrl = $nodeJsUrl.		'/socket.io/socket.io.js';
+		$headers = @get_headers($scriptUrl);
+		if ($scriptUrl !== FALSE && (bool)preg_match('/200\s*OK/', $headers[0])) {
+			drupal_add_js($scriptUrl);
+			return '';
 		} else {
-			$http = $headers == FALSE ? '' : ('Статус запроса: <em>' . $headers[0] . '</em>');
+			$http = $headers == FALSE ? '' : (' Статус запроса: <em>' . $headers[0] . '</em>');
 			return 'Не возможно присоединится к адресу <strong>' . $nodeJsUrl . '</strong>' . $http;
 		}
 	} else

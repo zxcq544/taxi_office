@@ -14,7 +14,6 @@ dependencies[] = file
 dependencies[] = image
 dependencies[] = entity
 dependencies[] = addressfield
-dependencies[] = nodejs
 
 configure = admin/config/system/taxi-office
 
