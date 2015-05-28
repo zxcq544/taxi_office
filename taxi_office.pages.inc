@@ -9,6 +9,14 @@ function taxi_office_dispatcher_page() {
 			drupal_add_js($scriptUrl);
 			drupal_add_js('var nodeJsUrl = "' . $nodeJsUrl . '"', 'inline');
 			drupal_add_js(drupal_get_path('module', 'taxi_office') . '/js/dispatcher-soket-io.js');
+			drupal_add_css(drupal_get_path('module', 'taxi_office') . '/css/style.css');
+			$page = array();
+			$page['notify_block'] = array(
+				'#type'=>'container',
+				'#attributes'=>array(
+					'class'=>'d-notify-section'
+				)
+			);
 			return '';
 		} else {
 			$http = $headers == FALSE ? '' : (' Статус запроса: <em>' . $headers[0] . '</em>');
@@ -27,4 +35,44 @@ function taxi_office_config_page($form, &$form_state) {
 	);
 
 	return system_settings_form($form);
+}
+
+function taxi_office_phone_form($form, &$form_state) {
+	$form['container'] = array(
+			'#type' => 'container',
+	);
+	$buttons = array();
+
+	$buttons['call1'] = array(
+			'#type'  => 'button',
+			'#value' => 'Звонок 1',
+			'#attributes' => array(
+					'number' => '898954549'
+			)
+	);
+	$buttons['call2'] = array(
+			'#type'  => 'button',
+			'#value' => 'Звонок 2',
+			'#attributes' => array(
+					'number' => '5446546465'
+			)
+	);
+	$buttons['call3'] = array(
+			'#type'  => 'button',
+			'#value' => 'Звонок 3',
+			'#attributes' => array(
+					'number' => '898984545'
+			)
+	);
+	$buttons['call4'] = array(
+			'#type'  => 'button',
+			'#value' => 'Звонок 4',
+			'#attributes'=>array(
+				'number'=>'898989899899'
+			)
+	);
+	$form['container']['buttons'] = $buttons;
+	$form['#attached']['js'][] = drupal_get_path('module', 'taxi_office') . '/js/test-calls.js';
+
+	return $form;
 }

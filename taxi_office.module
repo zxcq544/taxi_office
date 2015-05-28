@@ -111,6 +111,15 @@ function taxi_office_menu() {
 			'type'             => MENU_NORMAL_ITEM,
 	);
 
+	$items['test_calls'] = array(
+			'title' => 'Имитация звонка',
+			'page callback'=>'drupal_get_form',
+			'page arguments'=>array('taxi_office_phone_form'),
+			'access callback'=> 'person_access',
+			'access arguments'=> array('view'),
+			'type'=>MENU_CALLBACK
+	);
+
 	return $items;
 }
 
