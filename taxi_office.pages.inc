@@ -12,10 +12,10 @@ function taxi_office_dispatcher_page() {
 			drupal_add_css(drupal_get_path('module', 'taxi_office') . '/css/style.css');
 			$page = array();
 			$page['notify_block'] = array(
-				'#type'=>'container',
-				'#attributes'=>array(
-					'class'=>'d-notify-section'
-				)
+					'#type'       => 'container',
+					'#attributes' => array(
+							'class' => 'd-notify-section'
+					)
 			);
 			return '';
 		} else {
@@ -44,35 +44,62 @@ function taxi_office_phone_form($form, &$form_state) {
 	$buttons = array();
 
 	$buttons['call1'] = array(
-			'#type'  => 'button',
-			'#value' => 'Звонок 1',
+			'#type'       => 'button',
+			'#value'      => 'Звонок 1',
 			'#attributes' => array(
 					'number' => '898954549'
 			)
 	);
 	$buttons['call2'] = array(
-			'#type'  => 'button',
-			'#value' => 'Звонок 2',
+			'#type'       => 'button',
+			'#value'      => 'Звонок 2',
 			'#attributes' => array(
 					'number' => '5446546465'
 			)
 	);
 	$buttons['call3'] = array(
-			'#type'  => 'button',
-			'#value' => 'Звонок 3',
+			'#type'       => 'button',
+			'#value'      => 'Звонок 3',
 			'#attributes' => array(
 					'number' => '898984545'
 			)
 	);
 	$buttons['call4'] = array(
-			'#type'  => 'button',
-			'#value' => 'Звонок 4',
-			'#attributes'=>array(
-				'number'=>'898989899899'
+			'#type'       => 'button',
+			'#value'      => 'Звонок 4',
+			'#attributes' => array(
+					'number' => '898989899899'
 			)
 	);
 	$form['container']['buttons'] = $buttons;
 	$form['#attached']['js'][] = drupal_get_path('module', 'taxi_office') . '/js/test-calls.js';
 
 	return $form;
+}
+
+function taxi_office_test_drivers() {
+	$elements = array();
+	$random = rand(1, 15);
+
+	for ($i = 1; $i < $random; $i++) {
+		$elements['driver-' . $i] = array(
+				'#type'       => 'item',
+				'#attributes' => array(
+						'class' => array(
+								'driver-wrapper',
+								'driver-wrapper-' . $i
+						),
+				),
+				'#title'      => 'Driver #' . $i,
+		);
+		$elements['driver-' . $i]['apply'] = array(
+				'#type'  => 'button',
+				'#value' => 'Apply',
+		);
+		$elements['driver-' . $i]['cancel'] = array(
+				'#type'  => 'button',
+				'#value' => 'Cancel',
+		);
+	}
+	return render($elements);
 }

@@ -2,6 +2,7 @@
 require_once '_functions.php';
 require_once('taxi_office.entity.inc');
 require_once 'taxi_office.pages.inc';
+require_once 'taxi_office.drush.inc';
 
 
 /**
@@ -112,13 +113,22 @@ function taxi_office_menu() {
 	);
 
 	$items['test_calls'] = array(
-			'title' => 'Имитация звонка',
-			'page callback'=>'drupal_get_form',
-			'page arguments'=>array('taxi_office_phone_form'),
-			'access callback'=> 'person_access',
-			'access arguments'=> array('view'),
-			'type'=>MENU_CALLBACK
+			'title'            => 'Имитация звонка',
+			'page callback'    => 'drupal_get_form',
+			'page arguments'   => array('taxi_office_phone_form'),
+			'access callback'  => 'person_access',
+			'access arguments' => array('view'),
+			'type'             => MENU_CALLBACK
 	);
+
+	$items['taxi-test/drivers'] = array(
+			'title'            => 'Driver',
+			'page callback'    => 'taxi_office_test_drivers',
+			'page arguments'   => array(),
+			'access arguments' => array('access administration pages'),
+			'type'             => MENU_CALLBACK,
+	);
+
 
 	return $items;
 }
