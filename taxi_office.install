@@ -101,7 +101,7 @@ function taxi_office_schema() {
 							'not null' => TRUE
 					),
 			),
-			'primary key' => array('pid'),
+			'primary key' => array('pid', 'cid'),
 	);
 	_taxi_office_includes('schema', $schema);
 

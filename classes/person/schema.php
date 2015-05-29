@@ -16,16 +16,19 @@ function __person_schema(&$schema) {
 					'name'                 => array(
 							'type'     => 'varchar',
 							'length'   => 100,
+							'default'  => NULL,
 							'not null' => FALSE
 					),
 					'second_name'          => array(
 							'type'     => 'varchar',
 							'length'   => 100,
+							'default'  => NULL,
 							'not null' => FALSE
 					),
 					'surname'              => array(
 							'type'     => 'varchar',
 							'length'   => 100,
+							'default'  => NULL,
 							'not null' => FALSE
 					),
 					'family'               => array(
@@ -37,6 +40,7 @@ function __person_schema(&$schema) {
 					'phone'                => array(
 							'type'     => 'varchar',
 							'length'   => 100,
+							'default'  => NULL,
 							'not null' => FALSE
 					),
 
@@ -67,19 +71,21 @@ function __person_schema(&$schema) {
 					'passport_issued_date' => array(
 							'description' => 'unix timestamp',
 							'type'        => 'int',
-							'not null'    => TRUE,
+							'default'     => NULL,
+							'not null'    => FALSE,
 							'unsigned'    => FALSE
 					),
 					'birthday'             => array(
 							'description' => 'unix timestamp',
 							'type'        => 'int',
-							'not null'    => TRUE,
+							'default'     => NULL,
+							'not null'    => FALSE,
 							'unsigned'    => FALSE
 					),
 					'type'                 => array(
 							'type'     => 'varchar',
 							'length'   => 20,
-							'not null' => FALSE
+							'not null' => TRUE
 					),
 					'hire_date'            => array(
 							'description' => 'unix time stamp дата найма',
@@ -90,17 +96,20 @@ function __person_schema(&$schema) {
 					'fire_date'            => array(
 							'description' => 'unix time stamp дата увольнения',
 							'type'        => 'int',
-							'not null'    => TRUE,
+							'default'     => NULL,
+							'not null'    => FALSE,
 							'unsigned'    => FALSE,
 					),
 					'callsign'             => array(
 							'type'     => 'varchar',
 							'length'   => 255,
+							'default'  => NULL,
 							'not null' => FALSE
 					),
 					'mobile'               => array(
 							'type'     => 'varchar',
 							'length'   => 100,
+							'default'  => NULL,
 							'not null' => FALSE,
 					),
 
