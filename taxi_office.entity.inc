@@ -49,10 +49,12 @@ function person_load($uid) {
 /**
  * @param array $uids
  *
+ * @param array $conditions
+ *
  * @return array
  */
-function person_load_multiple($uids = array()) {
-	return entity_load('person', $uids);
+function person_load_multiple($uids = array(), $conditions = array()) {
+	return entity_load('person', $uids, $conditions);
 }
 
 /**
@@ -65,12 +67,14 @@ function call_load($id) {
 }
 
 /**
- * @param $ids
+ * @param       $ids
+ *
+ * @param array $conditions
  *
  * @return array
  */
-function call_load_multiple($ids) {
-	return entity_load('call', $ids);
+function call_load_multiple($ids, $conditions = array()) {
+	return entity_load('call', $ids, $conditions);
 }
 
 /**
@@ -83,12 +87,14 @@ function car_load($cid) {
 }
 
 /**
- * @param $cids
+ * @param       $cids
+ *
+ * @param array $conditions
  *
  * @return array
  */
-function car_load_multiple($cids) {
-	return entity_load('car', $cids);
+function car_load_multiple($cids, $conditions = array()) {
+	return entity_load('car', $cids, $conditions);
 }
 
 /**
@@ -102,10 +108,12 @@ function order_load($id) {
 }
 
 /**
- * @param $ids
+ * @param       $ids
+ *
+ * @param array $conditions
  *
  * @return array
  */
-function order_load_multiple($ids) {
-	return entity_load('order', $ids);
+function order_load_multiple($ids, $conditions = array()) {
+	return entity_load('order', $ids, $conditions);
 }
