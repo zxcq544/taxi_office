@@ -22,8 +22,22 @@ function taxi_office_dispatcher_page() {
 			$http = $headers == FALSE ? '' : (' Статус запроса: <em>' . $headers[0] . '</em>');
 			return 'Не возможно присоединится к адресу <strong>' . $nodeJsUrl . '</strong>' . $http;
 		}
-	} else
-		return 'Нет настроек <strong><em>Адрес сервера NodeJS</em></strong>';
+	} else {
+		//Загружаем шаблон кнопки которая грузит по аяксу форму для добавления заказов
+		$str = DRUPAL_ROOT . '/' .
+					 drupal_get_path('module', 'taxi_office') . "/template/order_button_to_get_form_by_ajax.tpl.php";
+		$page['test'] = [
+				'#markup' => file_get_contents($str)
+		];
+		return $page;
+	}
+}
+
+function ajax_order_page() {
+	$order = entity_create('order', array());
+	$form = render(entity_ui_get_form('order', $order, 'add'));
+	echo $form;
+	exit;
 }
 
 function taxi_office_config_page($form, &$form_state) {
@@ -103,3 +117,15 @@ function taxi_office_test_drivers() {
 	}
 	return render($elements);
 }
+
+
+function taxi_office_theme() {
+	return array(
+			'order_form' => array(
+					'template'  => 'template/order_form',
+					'variables' => array('order_form' => NULL, 'topics' => NULL, 'parents' => NULL, 'tid' => NULL,
+															 'sortby'     => NULL, 'forum_per_page' => NULL),
+			),
+	);
+}
+

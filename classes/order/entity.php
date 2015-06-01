@@ -18,7 +18,7 @@ function __order_entity(&$entity) {
 							'label'        => 'Заказ',
 							'plural label' => 'Заказы',
 							'description'  => '',
-							'admin'        => array(
+							'admin ui'     => array(
 									'path' => 'admin/orders'
 							)
 					)

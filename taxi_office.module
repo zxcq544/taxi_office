@@ -104,6 +104,7 @@ function taxi_office_menu() {
 			'type'             => MENU_CALLBACK,
 	);
 
+
 	$items['admin/config/system/taxi-office'] = array(
 			'title'            => 'Настройки TaxiOffice',
 			'page callback'    => 'drupal_get_form',
@@ -129,10 +130,20 @@ function taxi_office_menu() {
 			'type'             => MENU_CALLBACK,
 	);
 
+	$items['ajax_order_page'] = array(
+			'title'            => 'ajax order form',
+			'page callback'    => 'ajax_order_page',
+			//            'page arguments'   => array(),
+			'access arguments' => array('access administration pages'),
+			'type'             => MENU_CALLBACK,
+	);
+
 
 	return $items;
 }
 
+
 function taxi_office_dispatcher_access() {
 	return TRUE;
 }
+

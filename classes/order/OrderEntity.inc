@@ -65,6 +65,101 @@ class OrderEntity extends Entity {
 
 function order_form($form, &$form_state) {
 
+	$form['description'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('Пояснения к заказу'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('Description'),
+			'#required'    => TRUE,
+	);
+
+	$form['order_client_id'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('Reference client id'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('Reference client id'),
+			'#required'    => TRUE,
+	);
+
+	$form['estimated_charge'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('Estimated charge'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('Estimated charge'),
+			'#required'    => TRUE,
+	);
+
+	$form['phone'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('phone'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('phone'),
+			'#required'    => TRUE,
+	);
+
+
+	$form['status'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('status'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('status'),
+			'#required'    => TRUE,
+	);
+
+	$form['charge'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('charge'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('charge'),
+			'#required'    => TRUE,
+	);
+
+	$form['destination'] = array(
+			'#type'        => 'textfield',
+			'#title'       => t('destination'),
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+			'#maxlength'   => 255,
+			'#description' => t('destination'),
+			'#required'    => TRUE,
+	);
+
+	$form['submit'] = array(
+			'#type'  => 'submit',
+			'#value' => 'Отправить'
+			//        '#default_value' => 1,
+			//        '#size' => 2,
+	);
 
 	return $form;
+}
+
+
+function order_form_form_alter(&$form, &$form_state, $form_id) {
+	$form['order_form'] = array(
+			'#action' => 'path/you/want',
+	);
+}
+
+function order_form_submit($form, &$form_state) {
+
+
+	$form_state['values']['cabid'] = 2;
+	$entity = entity_ui_controller('order')->entityFormSubmitBuildEntity($form, $form_state);
+	$entity->save();
+	if(!empty($_GET['ajax'])){
+		$form_state['redirect'] = "/dispatcher";
+	}
 }
