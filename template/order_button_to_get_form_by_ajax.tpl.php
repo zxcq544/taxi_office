@@ -11,6 +11,7 @@
 	get_form_content_button.addEventListener('click', function () {
 		jQuery.get("/ajax_order_page", function (data) {
 			jQuery("#modal-body-id").html(data);
+			jQuery("#edit-phone").mask("+7 (999) 999-9999");
 			send_button = document.getElementById('edit-submit');
 			order_form = document.getElementById('order-form');
 			order_form.addEventListener('submit', function (ev) {
@@ -56,3 +57,8 @@
 		</div>
 	</div>
 </div>
+<script>
+	jQuery(function ($) {
+
+	});
+</script>

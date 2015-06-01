@@ -66,7 +66,7 @@ class OrderEntity extends Entity {
 function order_form($form, &$form_state) {
 
 	$form['description'] = array(
-			'#type'        => 'textfield',
+			'#type' => 'hidden',
 			'#title'       => t('Пояснения к заказу'),
 			//        '#default_value' => 1,
 			//        '#size' => 2,
@@ -76,7 +76,7 @@ function order_form($form, &$form_state) {
 	);
 
 	$form['order_client_id'] = array(
-			'#type'        => 'textfield',
+			'#type' => 'hidden',
 			'#title'       => t('Reference client id'),
 			//        '#default_value' => 1,
 			//        '#size' => 2,
@@ -86,7 +86,7 @@ function order_form($form, &$form_state) {
 	);
 
 	$form['estimated_charge'] = array(
-			'#type'        => 'textfield',
+			'#type' => 'hidden',
 			'#title'       => t('Estimated charge'),
 			//        '#default_value' => 1,
 			//        '#size' => 2,
@@ -107,7 +107,7 @@ function order_form($form, &$form_state) {
 
 
 	$form['status'] = array(
-			'#type'        => 'textfield',
+			'#type' => 'hidden',
 			'#title'       => t('status'),
 			//        '#default_value' => 1,
 			//        '#size' => 2,
@@ -117,7 +117,7 @@ function order_form($form, &$form_state) {
 	);
 
 	$form['charge'] = array(
-			'#type'        => 'textfield',
+			'#type' => 'hidden',
 			'#title'       => t('charge'),
 			//        '#default_value' => 1,
 			//        '#size' => 2,
@@ -126,15 +126,16 @@ function order_form($form, &$form_state) {
 			'#required'    => TRUE,
 	);
 
-	$form['destination'] = array(
-			'#type'        => 'textfield',
-			'#title'       => t('destination'),
-			//        '#default_value' => 1,
-			//        '#size' => 2,
-			'#maxlength'   => 255,
-			'#description' => t('destination'),
-			'#required'    => TRUE,
-	);
+	//На данный поля нет в schema.php
+//	$form['destination'] = array(
+//			'#type'        => 'textfield',
+//			'#title'       => t('destination'),
+//			//        '#default_value' => 1,
+//			//        '#size' => 2,
+//			'#maxlength'   => 255,
+//			'#description' => t('destination'),
+//			'#required'    => TRUE,
+//	);
 
 	$form['submit'] = array(
 			'#type'  => 'submit',

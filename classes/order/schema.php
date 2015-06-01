@@ -24,9 +24,9 @@ function __order_schema(&$schema) {
 					'wakeup_date'      => array(
 							'description' => 'wakeup date UNIX timestamp',
 							'type'        => 'int',
-							'not null'    => TRUE,
+							'not null' => FALSE,
 							'unsigned'    => TRUE,
-							'default'     => 0,
+							'default'  => NULL,
 					),
 					'update_date'      => array(
 							'description' => 'Update date UNIX timstamp',
@@ -54,8 +54,9 @@ function __order_schema(&$schema) {
 					'sit_date'         => array(
 							'description' => 'sit date unix timestamp',
 							'type'        => 'int',
-							'not null'    => TRUE,
+							'not null' => FALSE,
 							'unsigned'    => TRUE,
+							'default'  => NULL
 					),
 					'phone'            => array(
 							'type'     => 'varchar',
@@ -114,12 +115,12 @@ function __order_schema(&$schema) {
 							'not null'    => FALSE,
 							'unsigned'    => TRUE,
 					),
-					'destination'      => array(
-							'description' => 'Destination address',
-							'type'        => 'varchar',
-							'length'      => 255,
-							'not null'    => TRUE,
-					),
+					//					'destination'      => array(
+					//							'description' => 'Destination address',
+					//							'type'        => 'varchar',
+					//							'length'      => 255,
+					//							'not null'    => TRUE,
+					//					),
 					'legal_card'       => array(
 							'type'     => 'varchar',
 							'length'   => 255,

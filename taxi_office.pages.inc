@@ -23,6 +23,7 @@ function taxi_office_dispatcher_page() {
 			return 'Не возможно присоединится к адресу <strong>' . $nodeJsUrl . '</strong>' . $http;
 		}
 	} else {
+		drupal_add_js(drupal_get_path('module', 'taxi_office') . '/js/jquery_maskedinput_min.js');
 		//Загружаем шаблон кнопки которая грузит по аяксу форму для добавления заказов
 		$str = DRUPAL_ROOT . '/' .
 					 drupal_get_path('module', 'taxi_office') . "/template/order_button_to_get_form_by_ajax.tpl.php";
