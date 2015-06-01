@@ -142,15 +142,7 @@ function order_form($form, &$form_state) {
 			//        '#default_value' => 1,
 			//        '#size' => 2,
 	);
-
 	return $form;
-}
-
-
-function order_form_form_alter(&$form, &$form_state, $form_id) {
-	$form['order_form'] = array(
-			'#action' => 'path/you/want',
-	);
 }
 
 function order_form_submit($form, &$form_state) {
@@ -159,7 +151,7 @@ function order_form_submit($form, &$form_state) {
 	$form_state['values']['cabid'] = 2;
 	$entity = entity_ui_controller('order')->entityFormSubmitBuildEntity($form, $form_state);
 	$entity->save();
-	if(!empty($_GET['ajax'])){
-		$form_state['redirect'] = "/dispatcher";
-	}
+//	if(!empty($_GET['ajax'])){
+//		$form_state['redirect'] = "/dispatcher";
+//	}
 }

@@ -29,6 +29,11 @@ function taxi_office_dispatcher_page() {
 		$page['test'] = [
 				'#markup' => file_get_contents($str)
 		];
+		//BEGIN TEST
+//		$order = entity_create('order', array());
+//		$form = render(entity_ui_get_form('order', $order, 'add'));
+//		echo $form;
+		//END TEST
 		return $page;
 	}
 }
